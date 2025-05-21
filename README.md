@@ -22,6 +22,7 @@ Third, set the necessary variables and start fuzz.
 
 ```
 source initialization.sh
+cp -r ../seed ./
 timeout 43200 $AFL_DIR/afl-fuzz -C -d -m none -i $EVAL_DIR/seed -o $AFL_WORKDIR -- $EVAL_DIR/mruby_fuzz @@
 ```
 
