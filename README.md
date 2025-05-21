@@ -18,13 +18,18 @@ echo performance | tee cpu*/cpufreq/scaling_governor
 echo 0 | tee /proc/sys/kernel/randomize_va_space
 ```
 
-Third, set the necessary variables and start fuzz. The seed folder is the crash input of cve-2018-10191 of mruby.
+Third, set the necessary variables and start fuzz. The seed folder is the crash test case of CVE-2018-10191 of mruby.
 
 ```
 source initialization.sh
 cp -r ../seed ./
 timeout 43200 $AFL_DIR/afl-fuzz -C -d -m none -i $EVAL_DIR/seed -o $AFL_WORKDIR -- $EVAL_DIR/mruby_fuzz @@
 ```
+
+
+
+
+
 
 
 
