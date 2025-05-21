@@ -9,7 +9,7 @@ cd OptRCA
 ./RCA_prepare.sh
 ```
 
-Second, perform the following as root to prepare fuzz:
+Second, perform the following as root to prepare fuzz.
 
 ```
 echo core >/proc/sys/kernel/core_pattern
@@ -17,5 +17,13 @@ cd /sys/devices/system/cpu
 echo performance | tee cpu*/cpufreq/scaling_governor
 echo 0 | tee /proc/sys/kernel/randomize_va_space
 ```
+
+Third, set the necessary variables and start fuzz.
+
+```
+source initialization.sh
+timeout 43200 $AFL_DIR/afl-fuzz -C -d -m none -i $EVAL_DIR/seed -o $AFL_WORKDIR -- $EVAL_DIR/mruby_fuzz @@
+```
+
 
 
