@@ -36,6 +36,18 @@ cd -
 ```
 
 
+Fifth, run the following command to get the result of root cause analysis：
+```
+cd $AURORA_GIT_DIR/root_cause_analysis
+cargo build --release --bin monitor
+cargo build --release --bin rca
+cargo run --release --bin rca -- --eval-dir $EVAL_DIR --trace-dir $EVAL_DIR --monitor --rank-predicates
+cargo run --release --bin addr2line -- --eval-dir $EVAL_DIR
+cd -
+```
+The result of RCA is ranked_predicates_verbose.txt.
+
+
 
 
 
