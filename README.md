@@ -1,7 +1,7 @@
 This is the source code repository of OptRCA. OptRCA is a more powerful root cause analysis tool that is optimized and improved based on [AURORA](https://github.com/RUB-SysSec/aurora). Next, we will explain how to use OptRCA to perform root cause analysis on a crash test case.
 
 
-First, run the OptRCA_prepare.sh script to prepare the application binary (mruby) and the Intel Pin analysis tool for analysis.
+First, run the OptRCA_prepare.sh script to prepare the application binary (mruby) with the vulnerability (CVE-2018-10191) and the Intel Pin analysis tool for analysis.
 ```
 git clone https://github.com/gejingquan/OptRCA
 cd OptRCA
